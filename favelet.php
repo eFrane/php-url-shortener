@@ -34,6 +34,20 @@ $date = date(DATE_ATOM);
 <html>
  <head>
   <title><?=$shorturl;?></title>
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    div {
+      margin: 2px;
+      padding: 2px;
+      border: 1px dotted #ccc;
+    }
+  </style>
  </head>
  <body>
   <div id="content">
@@ -43,6 +57,10 @@ $date = date(DATE_ATOM);
    </div>
    <div id="url_container">
     Short URL: <span id="url"><a href="<?=$shorturl;?>"><?=$shorturl;?></a></span>
+   </div>
+   <div id="controls">
+    <a href="javascript:window.close();">Close</a>
+   </div>
   </div>
  </body>
 </html>
