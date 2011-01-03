@@ -4,16 +4,16 @@ include('config.php');
 if (isset($argc) && isset($argv)) {
   // cli mode
 
-  $url = SHORT_URL.'favelet.php?token='.AUTH_TOKEN.'&url=\'+enc(d.location)+\'';
-
   $script =<<<SCRIPT
   javascript:(
     function() {
-      var%%20 d=document, wsh;
-      wsh = window.open('%s', '_blank', 'width=480, height=100,
+      var%%20 d=document;
+      window.open('%s', '_blank', 'width=480, height=100,
         menubar=no,toolbar=no,status=no,location=no');
-    })()
+    })();
 SCRIPT;
+
+  $url = SHORT_URL.'favelet.php?token='.AUTH_TOKEN.'&url=\'+encodeURIComponent(d.location)+\'';
 
   $script = preg_replace('/([ \n])*/', '', $script);
   $script = sprintf($script, $url);
