@@ -3,7 +3,7 @@ include('config.php');
 
 header('Content-Type: text/plain;charset=UTF-8');
 
-(!isset($_GET['token']) || urldecode($_GET['token']) !== AUTH_TOKEN) {
+if (!isset($_GET['token']) || urldecode($_GET['token']) !== AUTH_TOKEN) {
   header('HTTP/1.1 401 Unauthorized');
   die('Unauthorized.');
 }
