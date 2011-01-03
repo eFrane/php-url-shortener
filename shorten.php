@@ -20,7 +20,7 @@ function nextLetter(&$str) {
 
 function getNextShortURL($s) {
   $i = base_convert($s, 36, 10);
-  return baseconvert(++$i, 10, 36);
+  return base_convert(++$i, 10, 36);
 }
 
 $db = new mysqli(MYSQLI_HOST, MYSQLI_USER, MYSQLI_PASSWORD, MYSQLI_DATABASE);
