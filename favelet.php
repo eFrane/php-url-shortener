@@ -59,6 +59,11 @@ $date = date(DATE_ATOM);
     padding:10px;
     background:#fff;
     width:800px;
+    border-radius:20px;
+    }
+
+    #stats
+    {
 
     }
   </style>
