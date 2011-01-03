@@ -26,8 +26,23 @@ $stats->fetch();
 $stats->close();
 
 $db->close();
+
+$date = date(DATE_ATOM);
+($hits == 0 || $hits > 1) ? $hits .= " times" : $hits .= "time";
 ?>
 <!DOCTYPE html>
 <html>
-
+ <head>
+  <title><?=$shorturl;?></title>
+ </head>
+ <body>
+  <div id="content">
+   <div id="stats">
+    You shortened <a href="<?=$url;?>"><?=$url;?></a>.
+    The shortened link was visited <?=$hits;?> since <?=$date;?>.
+   </div>
+   <div id="url_container">
+    Short URL: <span id="url"><a href="<?=$shorturl;?>"><?=$shorturl;?></a></span>
+  </div>
+ </body>
 </html>
