@@ -19,16 +19,8 @@ function nextLetter(&$str) {
 }
 
 function getNextShortURL($s) {
- $a = str_split($s);
- $c = count($a);
- if (preg_match('/^z*$/', $s)) { // string consists entirely of `z`
-  return str_repeat('a', $c + 1);
- }
- while ('z' === $a[--$c]) {
-  nextLetter($a[$c]);
- }
- nextLetter($a[$c]);
- return implode($a);
+  $i = base_convert($s, 36, 10);
+  return baseconvert(++$i, 10, 36);
 }
 
 $db = new mysqli(MYSQLI_HOST, MYSQLI_USER, MYSQLI_PASSWORD, MYSQLI_DATABASE);
