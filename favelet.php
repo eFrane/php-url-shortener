@@ -55,7 +55,7 @@ $date = date(DATE_ATOM);
 
     #content
     {
-    margin:auto 0;
+    margin:auto;
     padding:10px;
     background:#fff;
     width:800px;
