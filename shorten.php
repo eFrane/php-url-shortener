@@ -4,6 +4,11 @@ require('config.php');
 
 header('Content-Type: text/plain;charset=UTF-8');
 
+(!isset($_GET['token']) || urldecode($_GET['token']) !== AUTH_TOKEN) {
+  header('HTTP/1.1 401 Unauthorized');
+  die('Unauthorized.');
+}
+
 $url = isset($_GET['url']) ? urldecode(trim($_GET['url'])) : '';
 
 if (in_array($url, array('', 'about:blank', 'undefined', 'http://localhost/'))) {
