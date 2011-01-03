@@ -1,6 +1,6 @@
 <?php
 
-require('config.php');
+include('config.php');
 
 function redirect($url) {
  header('Location: ' . $url, null, 301);
