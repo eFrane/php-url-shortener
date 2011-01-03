@@ -40,6 +40,11 @@ $date = date(DATE_ATOM);
       padding: 0;
       width: 100%;
       height: 100%;
+      font-family:Arial, Helvetica, Tahoma, Verdana, sans-serif;
+      font-size:12px;
+      color:#000;
+      line-height: 1.2em;
+      background:#ccc;
     }
 
     div {
@@ -47,12 +52,21 @@ $date = date(DATE_ATOM);
       padding: 2px;
       border: 1px dotted #ccc;
     }
+
+    #content
+    {
+    margin:auto 0;
+    padding:10px;
+    background:#fff;
+    width:800px;
+
+    }
   </style>
  </head>
  <body>
   <div id="content">
    <div id="stats">
-    You shortened <a href="<?=$url;?>"><?=$url;?></a>.
+    You shortened <a href="<?=$url;?>"><?=$url;?></a>.<br />
     The shortened link was visited <?=$hits;?> since <?=$date;?>.
    </div>
    <div id="url_container">
