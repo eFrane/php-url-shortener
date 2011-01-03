@@ -11,7 +11,7 @@ define('DEFAULT_URL', ''); // omit the trailing slash!
 // auth token to make shortening more secure
 // esp. to avoid random ppl shortening URLs via this instance who shouldn't.
 if (!file_exists('auth.token')) {
-  if (!file_put_contents(sha1(uniqid().strftime(DATE_ATOM)))) {
+  if (!file_put_contents(substr(sha1(uniqid().strftime(DATE_ATOM)), 0, 8))) {
     die("Could neither access nor create auth.token, check config.");
   }
 } else {
