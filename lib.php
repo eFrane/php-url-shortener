@@ -16,6 +16,10 @@ function getNextShortURL($s) {
 }
 
 function shorten($url, $echo = true) {
+  if (in_array($url, array('', 'about:blank', 'undefined', 'http://localhost/'))) {
+    die('Invalid URL.');
+  }
+
   $db = new mysqli(MYSQLI_HOST, MYSQLI_USER, MYSQLI_PASSWORD, MYSQLI_DATABASE);
   $db->query('SET NAMES "utf8"');
 

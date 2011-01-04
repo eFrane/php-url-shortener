@@ -10,9 +10,4 @@ if (!isset($_GET['token']) || urldecode($_GET['token']) !== AUTH_TOKEN) {
 }
 
 $url = isset($_GET['url']) ? urldecode(trim($_GET['url'])) : '';
-
-if (in_array($url, array('', 'about:blank', 'undefined', 'http://localhost/'))) {
- die('Enter a URL.');
-}
-
 shorten($url);

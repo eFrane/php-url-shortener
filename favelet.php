@@ -1,6 +1,6 @@
 <?php
-
 include('config.php');
+include('lib.php');
 
 if (!isset($_GET['token']) || urldecode($_GET['token']) !== AUTH_TOKEN) {
   header('Content-Type: text/plain;charset=UTF-8');
@@ -10,8 +10,8 @@ if (!isset($_GET['token']) || urldecode($_GET['token']) !== AUTH_TOKEN) {
   header('Content-Type: text/html;charset=UTF-8');
 }
 
-$shorturl = file_get_contents(sprintf("http://efrane.com/shorten?token=%s&url=%s",
-              $_GET['token'], $_GET['url']));
+$url = isset($_GET['url']) ? urldecode(trim($_GET['url'])) : '';
+$shorturl = shorten($url, true);
 
 $db = new mysqli(MYSQLI_HOST, MYSQLI_USER, MYSQLI_PASSWORD, MYSQLI_DATABASE);
 $db->query('SET NAMES "utf8"');
