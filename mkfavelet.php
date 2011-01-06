@@ -7,7 +7,8 @@ if (isset($argc) && isset($argv)) {
   $script =<<<SCRIPT
   javascript:(
     function() {
-      var%%20 d=document;
+      var%%20 d = document;
+
       window.open('%s', '_blank', 'width=480, height=100,
         menubar=no,toolbar=no,status=no,location=no');
     })();
