@@ -72,13 +72,15 @@ $date = date(DATE_ATOM);
   <script type="text/javascript" src="zeroclipboard.js">
   </script>
   <script type="text/javascript">
-    ZeroClipboard.setMoviePath('zeroclipboard.swf');
-    var clip = new ZeroClipboard.Client();
-    clip.setText = "<?=$url?>";
-    clip.glue = "copy_btn";
+    function init() {
+      ZeroClipboard.setMoviePath('zeroclipboard.swf');
+      var clip = new ZeroClipboard.Client();
+      clip.setText = "<?=$url?>";
+      clip.glue = "copy_btn";
+    }
   </script>
  </head>
- <body>
+ <body onload="init()" lang="en">
   <div id="content">
    <div id="stats">
     You shortened <a href="<?=$url;?>"><?=$url;?></a>.<br />
