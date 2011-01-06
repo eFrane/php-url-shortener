@@ -72,6 +72,7 @@ $date = date(DATE_ATOM);
   <script type="text/javascript" src="zeroclipboard.js">
   </script>
   <script type="text/javascript">
+    ZeroClipboard.setMoviePath('zeroclipboard.swf');
     var clip = new ZeroClipboard.Client();
     clip.setText = "<?=$url?>";
     clip.glue = "copy_btn";
@@ -87,8 +88,8 @@ $date = date(DATE_ATOM);
     Short URL: <span id="url"><a href="<?=$shorturl;?>"><?=$shorturl;?></a></span>
    </div>
    <div id="controls">
-    <a href="javascript:window.close();">Close</a>
-    <span id="copy_btn">Copy to Clipboard</span>
+    <a href="javascript:window.close();">Close</a>&nbsp;|&nbsp;
+    <a href="#" id="copy_btn">Copy to Clipboard</a>
    </div>
   </div>
  </body>
