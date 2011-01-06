@@ -42,7 +42,7 @@ $date = date(DATE_ATOM);
       margin: 0;
       padding: 0;
       width: 100%;
-      height: 100%;
+      height: 70px;
       font-family:Arial, Helvetica, Tahoma, Verdana, sans-serif;
       font-size:12px;
       color:#000;
@@ -69,6 +69,13 @@ $date = date(DATE_ATOM);
     #stats {
     }
   </style>
+  <script type="text/javascript" src="zeroclipboard.js">
+  </script>
+  <script type="text/javascript">
+    var clip = new ZeroClipboard.Client();
+    clip.setText = "<?=$url?>";
+    clip.glue = "copy_btn";
+  </script>
  </head>
  <body>
   <div id="content">
@@ -81,6 +88,7 @@ $date = date(DATE_ATOM);
    </div>
    <div id="controls">
     <a href="javascript:window.close();">Close</a>
+    <span id="copy_btn">Copy to Clipboard</span>
    </div>
   </div>
  </body>
