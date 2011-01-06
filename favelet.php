@@ -53,20 +53,17 @@ $date = date(DATE_ATOM);
       border: 1px dotted #ccc;
     }
 
-    #content
-    {
-    margin:auto;
-    margin-top:20px;
-    margin-bottom:20px;
-    padding:10px;
-    background:#fff;
-    width:800px;
-    border-radius:20px;
+    #content {
+      margin:auto;
+      margin-top:20px;
+      margin-bottom:20px;
+      padding:10px;
+      background:#fff;
+      width:800px;
+      border-radius:20px;
     }
 
-    #stats
-    {
-
+    #stats {
     }
   </style>
  </head>
