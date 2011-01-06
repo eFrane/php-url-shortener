@@ -6,9 +6,8 @@ if (!file_exists('auth.token')) {
   if (!file_put_contents('auth.token', substr(sha1(uniqid()), 0, 8))) {
     die("Could neither access nor create auth.token, check config.");
   }
-} else {
-  define('AUTH_TOKEN', trim(file_get_contents('auth.token')));
 }
+define('AUTH_TOKEN', trim(file_get_contents('auth.token')));
 
 function getNextShortURL($s) {
   $i = base_convert($s, 36, 10);
@@ -38,7 +37,7 @@ function shorten($url, $echo = true) {
       }
     }
   }
-  if ($echo) {
+  if ($echo == true) {
     header('HTTP/1.1 201 Created');
     echo $shorturl;
   } else {
