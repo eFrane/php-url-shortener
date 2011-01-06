@@ -6,12 +6,15 @@ if (!isset($_GET['token']) || urldecode($_GET['token']) !== AUTH_TOKEN) {
   header('Content-Type: text/plain;charset=UTF-8');
   header('HTTP/1.1 401 Unauthorized');
   die('Unauthorized.');
-} else {
-  header('Content-Type: text/html;charset=UTF-8');
 }
 
 $url = isset($_GET['url']) ? urldecode(trim($_GET['url'])) : '';
-$shorturl = shorten($url, true);
+ob_start();
+shorten($url, true);
+$shorturl = ob_get_contents();
+ob_end_clean();
+
+header('Content-Type: text/html;charset=UTF-8');
 
 $db = new mysqli(MYSQLI_HOST, MYSQLI_USER, MYSQLI_PASSWORD, MYSQLI_DATABASE);
 $db->query('SET NAMES "utf8"');
