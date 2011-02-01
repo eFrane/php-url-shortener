@@ -65,9 +65,6 @@ $date = date(DATE_ATOM);
       width:800px;
       border-radius:20px;
     }
-
-    #stats {
-    }
   </style>
   <script type="text/javascript" src="zeroclipboard.js">
   </script>
@@ -83,7 +80,7 @@ $date = date(DATE_ATOM);
    </div>
    <div id="controls">
     <a href="javascript:window.close();">Close</a>&nbsp;|&nbsp;
-    <a href="#" id="copy_btn">Copy to Clipboard</a>
+    <div id="copy_btn">Copy to Clipboard</div>
    </div>
   </div>
   <script type="text/javascript">
